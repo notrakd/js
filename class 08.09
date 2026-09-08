@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="script.js"></script>
+</head>
+<body>
+    <script> 
+        //Task1();
+        // task2() 
+        // task3()
+        // taks4();
+        task7();
+    </script>
+</body>
+</html>
+
+function Task1() {
+    let a = parseInt(prompt("Enter number "))
+    if(a > 0)
+    {
+        alert("Number bigger then 0")
+    }
+    else if(a < 0)
+    {
+        alert("smaler then 0")
+    }
+    else
+    {
+        alert(" == nol")
+    }
+}
+
+
+function task2()
+{
+    let age = parseInt(prompt("enter age"))
+    if(age > 0 && age < 120)
+    {
+        alert("correct age")
+    }
+    else 
+    {
+        alert("Not correct")
+    }
+}
+
+function task3()
+{
+    let number = parseInt(prompt("enter number"))
+    if(number < 0)
+    {
+        alert("modele" + (number * (-1)))
+    }
+    else
+    {
+        alert("Number" + number)
+    }
+}
+
+function taks4() {
+    let hour = parseInt(prompt("enter hour"));
+    let minut = parseInt(prompt("enter minut"));
+    let sec = parseInt(prompt("enter sec"));
+
+    if (hour < 0 || hour > 24) {
+        alert("nepravilno hour");
+    } else {
+        alert("Hour is correct");
+    }
+
+    if (minut < 0 || minut > 60) {
+        alert("nepravilno minut");
+    } else {
+        alert("Minute is correct");
+    }
+
+    if (sec < 0 || sec > 60) {
+        alert("nepravilno sec");
+    } else {
+        alert("Second is correct");
+    }
+
+    alert("Time: " + hour + ":" + minut + ":" + sec);
+}
+
+
+function task5()
+{
+    let coor1 = parseInt(prompt("enter coor x "))
+    let coor2 = parseInt(prompt("enter coor y "))
+
+    if(coor1 > 0 && coor2 > 0)
+    {
+        alert("1 chetvert")
+    }
+
+    else if(coor1 < 0 && coor2 < 0)
+    {
+        alert("3 chetvert")
+    }
+    else if(coor1 < 0 && coor2 > 0)
+    {
+        alert("2 chetvert")
+    }
+    else if(coor1 > 0 && coor2 < 0)
+    {
+        alert("4 chetvert")
+    }
+    else
+    {
+        alert("na osi")
+    }
+}
+
+function task6()
+{
+    let number_month = parseInt(prompt("enter month number "))
+
+    switch(number_month)
+    {
+        case 1:
+            alert("January");
+            break;
+        case 2:
+            alert("February");
+            break;
+        case 3:
+            alert("March");
+            break;
+        case 4:
+            alert("April");
+            break;
+        case 5:
+            alert("May");
+            break;
+        case 6:
+            alert("June");
+            break;
+        case 7:
+            alert("July");
+            break;
+        case 8:
+            alert("August");
+            break;
+        case 9:
+            alert("September");
+            break;
+        case 10:
+            alert("October");
+            break;
+        case 11:
+            alert("November");
+            break;
+        case 12:
+            alert("Desember");
+            break;
+        default:
+            alert("Noname month")
+    }
+}
+
+
+function task7()
+{
+        let first_num = parseInt(prompt("enter  number1 "))
+        let second_num = parseInt(prompt("enter  number2 "))
+        let znak = prompt("enter znak")
+        switch(znak)
+        {
+            case '+':
+                alert(first_num + second_num);
+                break;
+            case '-':
+                alert(first_num - second_num);
+                break;
+            case '*':
+                alert(first_num * second_num);
+                break;
+            case '/':
+                alert(first_num / second_num);
+                break;
+            default:
+                alert("noname znak")
+        }
+
+
+}

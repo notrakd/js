@@ -1,0 +1,120 @@
+
+function task1() {
+    let age = parseInt(prompt("Age:"));
+    if (age >= 0 && age < 12) {
+        alert("Child");
+    } else if (age >= 12 && age < 18) {
+        alert("Teenager");
+    } else if (age >= 18 && age < 60) {
+        alert("Adult");
+    } else if (age >= 60) {
+        alert("Senior");
+    } else {
+        alert("Invalid");
+    }
+}
+
+function task2() {
+    let num = parseInt(prompt("Digit (0-9):"));
+    switch (num) {
+        case 1: 
+            alert("!"); 
+            break;
+        case 2: 
+            alert("@"); 
+            break;
+        case 3: 
+            alert("#"); 
+            break;
+        case 4: 
+            alert("$"); 
+            break;
+        case 5: 
+            alert("%");
+             break;
+        case 6: 
+            alert("^"); 
+            break;
+        case 7:     
+            alert("&"); 
+            break;
+        case 8:
+                 alert("*"); 
+                 break;
+        case 9: 
+            alert("("); 
+            break;
+        case 0: 
+            alert(")");   
+            break;
+        default: alert("Invalid");
+    }
+}
+
+function task3() {
+    let usd = parseFloat(prompt("USD amount:"));
+    let cur = prompt("Currency (EUR, UAH, AZN):");
+    switch (cur) {
+        case "EUR":
+        case "eur":
+            alert(usd * 0.92);
+            break;
+        case "UAH":
+        case "uah":
+        case "UAN":
+        case "uan":
+            alert(usd * 41.2);
+            break;
+        case "AZN":
+        case "azn":
+            alert(usd * 1.70);
+            break;
+        default:
+            alert("Invalid");
+    }
+}
+
+function task4() {
+    let y = parseInt(prompt("Year:"));
+    if (y % 400 === 0 || (y % 4 === 0 && y % 100 !== 0)) {
+        alert("Leap year");
+    } else {
+        alert("Not leap year");
+    }
+}
+
+
+function task7() {
+    let circle = parseFloat(prompt("Circle length:"));
+    let square = parseFloat(prompt("Square perimeter:"));
+    let PI = 3.14159;
+    let diameter = circle / PI;
+    let side = square / 4;
+
+    if (diameter <= side) {
+        alert("Fits");
+    } else {
+        alert("Does not fit");
+    }
+}
+
+function task8() {
+    let score = 0;
+
+    let q1 = prompt("1. Leap year days? a) 365 b) 366 c) 367");
+    if (q1 === "b" || q1 === "B" || q1 === "366") {
+        score += 2;
+    }
+
+    let q2 = prompt("2. 2 + 2 * 2 = ? a) 6 b) 8 c) 4");
+    if (q2 === "a" || q2 === "A" || q2 === "6") {
+        score += 2;
+    }
+
+    let q3 = prompt("3. Capital of France? a) London b) Berlin c) Paris");
+    if (q3 === "c" || q3 === "C" || q3 === "paris" || q3 === "Paris") {
+        score += 2;
+    }
+
+    alert("Score: " + score);
+}

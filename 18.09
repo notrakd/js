@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="qwer">
+        <p id="header">header</p>
+        <p id="main">HEEEEEEEE</p>
+        <p class="note">note 1</p>
+        <p class="note">note 2</p>
+        <p class="item">HEEEAAAA</p>
+        <p class="item">HEEEAAAA123</p>
+        <p class="message">1234567</p>
+        <p class="message">1234567</p>
+        <p class="name">Dima</p>
+        <input type="email" name="email">
+        <input type="checkbox" name="option" value="yes"> Согласен с условиями
+        <input type="checkbox" name="option" value="yes"> Согласен с условиями
+            <div id="footer">Footer</div>
+        
+    </div>
+
+    <!-- <script>
+        let header = document.getElementById("header");
+        header.innerHTML = "<p> Welcome</p> ";
+        // header.textContent = "<p> Welcome </p>";
+        //header.outerHTML="<div> Prosto div </div>" 
+        header.classList.add("test");
+        // header.classList.remove("test")
+        header.classList.add("test2")
+
+    </script> -->
+
+    <script>
+        //1
+        // let header = document.getElementById("header");
+        // header.innerHTML = "<p> Welcome</p> ";
+
+        //2
+        // let main = document.getElementById("main")
+        // main.classList.add("test2")
+
+        //3
+        // let notes = document.getElementsByClassName("note");
+
+        // for (let note of notes) {
+        //     note.classList.add("test");
+        // }     
+
+        //4
+        // let items = document.getElementsByClassName("item");
+        // console.log(items.length);
+
+        //5
+        // let messages = document.getElementsByClassName("message");
+        // for (let i = 0; i < messages.length; i++) {
+        //     messages[i].textContent = "Обновлено";
+        // }
+
+        //6
+        //6
+        
+        //7
+        // let emailInput = document.querySelector('input[name="email"]');
+        // emailInput.value = "student@example.com";
+
+//         //8
+//         let checkboxes = document.getElementsByName("option");
+//         let checkedCount = 0;
+
+//         for (let checkbox of checkboxes) {
+//         if (checkbox.checked) {
+//         checkedCount++;
+//         }
+//         }
+
+// console.log(checkedCount);
+
+        //9. Найдите элемент с id="footer" и сделайте его невидимым (например, через style.display = "none").
+
+        let footer = document.getElementById("footer");
+        footer.style.display = "none";
+
+        //10.Получите элемент с id="menu" и добавьте ему класс "active".
+        let note = document.getElementById("note");
+        note.classList.add("active");
+        </script>
+
+</body>
+</html>
+
+
+<!-- Задачи для выполнения с использованием JavaScript:
+
+
+9. Найдите элемент с id="footer" и сделайте его невидимым (например, через style.display = "none").
+
+10.Получите элемент с id="menu" и добавьте ему класс "active".
+
+
+
+-->

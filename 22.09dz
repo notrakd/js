@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 1</title>
+</head>
+
+<body>
+    <div>Вы ввели: <span></span></div>
+
+    <script>
+        let input = prompt("Введите сообщение");
+        document.querySelector("span").textContent = input;
+    </script>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 2</title>
+
+    <style>
+        #color-sample {
+            width: 250px;
+            height: 70px;
+            margin: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="color-sample"></div>
+    <p>Цвет: </p>
+
+    <script>
+        function getRandomColor() {
+            var letters = '0123456789ABCDEF';
+            var color = '#';
+            for (var i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+
+        let colorSampleDiv = document.querySelector("#color-sample");
+        let randomColor = getRandomColor();
+
+        colorSampleDiv.style.backgroundColor = randomColor;
+        document.querySelector("p").textContent = "Цвет: " + randomColor;
+    </script>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 3</title>
+
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid black;
+        }
+
+        td, th {
+            padding: 8px;
+        }
+    </style>
+</head>
+<body>
+    <table id="statsTable">
+        <tr>
+            <th>Месяц</th>
+            <th>Отдел 1</th>
+            <th>Отдел 2</th>
+        </tr>
+        <tr>
+            <td>Январь</td>
+            <td>50</td>
+            <td>120</td>
+        </tr>
+        <tr>
+            <td>Февраль</td>
+            <td>60</td>
+            <td>140</td>
+        </tr>
+        <tr>
+            <td>Март</td>
+            <td>125</td>
+            <td>115</td>
+        </tr>
+        <tr>
+            <td>Апрель</td>
+            <td>87</td>
+            <td>100</td>
+        </tr>
+        <tr>
+            <td>Март</td>
+            <td>95</td>
+            <td>80</td>
+        </tr>
+        <tr>
+            <td>Июнь</td>
+            <td>115</td>
+            <td>90</td>
+        </tr>
+        <tr>
+            <td>Июль</td>
+            <td>125</td>
+            <td>100</td>
+        </tr>
+    </table>
+
+    <div id="result"></div>
+
+    <script>
+        let table = document.querySelector("#statsTable");
+        let rows = table.rows;
+
+        let sum1 = 0;
+        let sum2 = 0;
+
+        for (let i = 1; i < rows.length; i++) {
+            sum1 += Number(rows[i].cells[1].textContent);
+            sum2 += Number(rows[i].cells[2].textContent);
+        }
+
+        let totalRow = table.insertRow();
+        totalRow.insertCell(0).textContent = "Итого";
+        totalRow.insertCell(1).textContent = sum1;
+        totalRow.insertCell(2).textContent = sum2;
+
+        let resultDiv = document.querySelector("#result");
+        if (sum1 > sum2) {
+            resultDiv.textContent = "Отдел 1 сделал больше продаж";
+        } else if (sum2 > sum1) {
+            resultDiv.textContent = "Отдел 2 сделал больше продаж";
+        } else {
+            resultDiv.textContent = "Отделы сделали одинаковое количество продаж";
+        }
+    </script>
+</body>
+</html>

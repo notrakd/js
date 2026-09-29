@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 01</title>
+</head>
+
+<body>
+    <script>
+        class Car {
+            #model;
+            #year;
+
+            constructor(model, year) {
+                this.Model = model;
+                this.Year = year;
+            }
+
+            get Model() {
+                return this.#model;
+            }
+
+            set Model(value) {
+                if (value) {
+                    this.#model = value;
+                } else {
+                    this.#model = "Неизвестная модель";
+                }
+            }
+
+            get Year() {
+                return this.#year;
+            }
+
+            set Year(value) {
+                if (value >= 1760 && value <= 2028) {
+                    this.#year = value;
+                } else {
+                    this.#year = "Некорректный год";
+                }
+            }
+
+            showInfo() {
+                console.log(`${this.#model} ${this.#year}`);
+            }
+        }
+
+        let car1 = new Car("Volkswagen", 2010);
+        car1.showInfo();
+        console.log(car1.Model, car1.Year);
+    </script>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 02</title>
+</head>
+
+<body>
+    <script>
+        /*
+        Задание:
+        Определите класс цилиндр, который будет объектным представлением геометрического тела.
+        Класс должен содержать конструктор.
+        Конструктор должен принимать два параметра высота и радиус и инициализировать соответствующие свойства.
+        В классе должен быть определен метод getVolume, который должен возвращать значение объема данного цилиндра.
+        Создайте два экземпляра данного класса, передав произвольные значения в качестве параметров конструктора и выведите
+        на консоль значения объема двух экземпляров.
+        */
+
+
+class Cylinder {
+    #radius;
+    #height;
+
+    constructor(radius, height) {
+        this.#radius = radius;
+        this.#height = height;
+    }
+
+    get radius() {
+        return this.#radius;
+    }
+
+    set radius(value) {
+        if (typeof value === "number" && value > 0) {
+            this.#radius = value;
+        } else {
+            this.#radius = 0;
+        }
+    }
+
+    get height() {
+        return this.#height;
+    }
+
+    set height(value) {
+        if (typeof value === "number" && value > 0) {
+            this.#height = value;
+        } else {
+            this.#height = 0;
+        }
+    }
+
+    getVolume() {
+        return Math.PI * Math.pow(this.#radius, 2) * this.#height;
+    }
+}
+
+let cylinder1 = new Cylinder(5, 10);
+let cylinder2 = new Cylinder(3, 7);
+
+console.log("Объем первого цилиндра:"+ cylinder1.getVolume());
+console.log("Объем второго цилиндра:" + cylinder2.getVolume());
+    </script>
+</body>
+
+</html>
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 03</title>
+
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .car-info {
+            display: inline-block;
+            margin: 10px 0 10px 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="car-info" id="placeholder1"></div>
+    <div class="car-info" id="placeholder2"></div>
+    <div class="car-info" id="placeholder3"></div>
+    
+    <script>
+        /*
+        Задание:
+        Замените функцию конструктор на класс.
+        Все свойства класса Car поменяйте на закрытые поля и для каждого поля добавьте getter и setter по необходимости.
+        Для поля html предусмотрите возможность только получения значения, организуйте код таким образом, чтобы не допустить
+        редактирование значения свойства html напрямую.
+        */
+
+class Car {
+    #image;
+    #manufacturer;
+
+    constructor(image, manufacturer) {
+        this.#image = image;
+        this.#manufacturer = manufacturer;
+    }
+
+    get Image() {
+        return this.#image;
+    }
+
+    set Image(value) {
+        this.#image = value || "default.jpg";
+    }
+
+    get Manufacturer() {
+        return this.#manufacturer;
+    }
+
+    set Manufacturer(value) {
+        this.#manufacturer = value || "Неизвестный производитель";
+    }
+
+    get html() {
+        return `<img src="images/${this.#image}" /><br />Производитель: ${this.#manufacturer}<br />`;
+    }
+}
+
+let car1 = new Car("audi-a6-250.jpg", "Audi");
+let car2 = new Car("jaguar-x-type-250.jpg", "Jaguar");
+let car3 = new Car("porsche-carrera-911-250.jpg", "Porsche");
+
+let placeholder1 = document.querySelector("#placeholder1");
+let placeholder2 = document.querySelector("#placeholder2");
+let placeholder3 = document.querySelector("#placeholder3");
+
+placeholder1.innerHTML = car1.html;
+placeholder2.innerHTML = car2.html;
+placeholder3.innerHTML = car3.html;
+    </script>
+</body>
+
+</html>

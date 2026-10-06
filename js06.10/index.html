@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Карточка студента</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="card">
+        <div class="card-photo">
+            <img id="student-photo" src="image.png" alt="Фото студента">
+        </div>
+
+        <div class="card-info">
+            <div class="card-field">
+                <span class="label">Name:</span>
+                <span id="student-name" class="value name-val"></span>
+            </div>
+            <div class="card-field">
+                <span class="label">Age:</span>
+                <span id="student-age" class="value age-val"></span>
+            </div>
+            <div class="card-field">
+                <span class="label">Faculty:</span>
+                <span id="student-faculty" class="value faculty-val"></span>
+            </div>
+            <div class="card-field">
+                <span class="label">Year:</span>
+                <span id="student-year" class="value year-val"></span>
+            </div>
+        </div>
+    </div>
+
+            <script src="main.js"></script>
+
+</body>
+</html>
+
+
+
+
+<!-- Создайте класс StudentCard, который будет описывать карточку студента. Поля:
+name (имя студента)
+age (возраст)
+faculty (факультет)
+year (курс обучения)
+фото(ссылка на фото)
+Добавьте методы:
+introduce() — выводит строку: "Студент [name], [age] лет, факультет [faculty], курс [year]."
+updateYear() — увеличивает курс на 1 (например, с 2 на 3).
+graduate() — проверяет, если курс больше 4, выводит "Студент [name] закончил обучение.".
+Реализуйте геттер и сеттер для свойства faculty, чтобы можно было безопасно менять факультет.
+Создайте несколько объектов студентов и протестируйте методы. -->

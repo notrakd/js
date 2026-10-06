@@ -1,0 +1,33 @@
+.card {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    border: 2px solid #333;
+    width: fit-content;
+    border-radius: 8px;
+}
+
+.card-photo img {
+    width: 150px;
+    height: 200px;
+    object-fit: cover;
+    border: 1px solid #ccc;
+    display: block;
+    border-radius: 4px;
+}
+
+.card-info {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.card-field {
+    margin: 0;
+    font-size: 18px;
+    font-family: sans-serif;
+}
+
+.label {
+    font-weight: bold;
+}

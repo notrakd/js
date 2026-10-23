@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Мини-игра</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+        }
+
+        #player {
+            width: 50px;
+            height: 50px;
+            background-color: blue;
+            position: absolute;
+            left: 100px;
+            top: 100px;
+        }
+
+        #coin {
+            width: 40px;
+            height: 40px;
+            background-color: yellow;
+            border-radius: 50%;
+            position: absolute;
+        }
+
+        #trap {
+            width: 40px;
+            height: 40px;
+            background-color: red;
+            position: absolute;
+        }
+
+        #message {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            font-size: 24px;
+            font-weight: bold;
+            color: green;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="player"></div>
+    <div id="coin"></div>
+    <div id="trap"></div>
+    <div id="message">Счёт: 0</div>
+
+    <script>
+        const player = document.getElementById("player");
+        const coin = document.getElementById("coin");
+        const trap = document.getElementById("trap");
+        const message = document.getElementById("message");
+
+        let score = 0;
+        let gameOver = false;
+        let x = 100;
+        let y = 100;
+        const step = 20;
+
+        function moveElement(element) {
+            const maxX = window.innerWidth - 40;
+            const maxY = window.innerHeight - 40;
+
+            const randomX = Math.random() * maxX;
+            const randomY = Math.random() * maxY;
+
+            element.style.left = randomX + "px";
+            element.style.top = randomY + "px";
+        }
+
+        moveElement(coin);
+        moveElement(trap);
+
+        function checkCollision(rect1, rect2) {
+            return (
+                rect1.left < rect2.right &&
+                rect1.right > rect2.left &&
+                rect1.top < rect2.bottom &&
+                rect1.bottom > rect2.top
+            );
+        }
+
+        function checkEvents() {
+            if (gameOver) return;
+
+            const p = player.getBoundingClientRect();
+            const c = coin.getBoundingClientRect();
+            const t = trap.getBoundingClientRect();
+
+            if (checkCollision(p, c)) {
+                score++;
+                console.log("Количество попаданий: " + score);
+                message.textContent = `Счёт: ${score}`;
+                moveElement(coin);
+            }
+
+            if (checkCollision(p, t)) {
+                gameOver = true;
+                message.textContent = "Игра окончена!";
+                message.style.color = "red";
+            }
+        }
+
+        document.addEventListener("keydown", function (event) {
+            if (gameOver) return;
+
+            if (event.key === "ArrowUp") {
+                y -= step;
+            }
+
+            if (event.key === "ArrowDown") {
+                y += step;
+            }
+
+            if (event.key === "ArrowLeft") {
+                x -= step;
+            }
+
+            if (event.key === "ArrowRight") {
+                x += step;
+            }
+
+            player.style.left = x + "px";
+            player.style.top = y + "px";
+
+            checkEvents();
+        });
+    </script>
+
+</body>
+
+</html>
